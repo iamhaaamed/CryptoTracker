@@ -1,0 +1,10 @@
+export const TRANSPARENT = 'rgba(0,0,0,0)';
+export const OPAQUE = 'rgba(0, 0, 0, 0.7)';
+export const WHITE = '#fff';
+export const BLACK = '#000';
+export const TEXT = '#212529';
+export const LIGHT_GRAY = 'lightgray';
+export const PRIMARY = '#007bff';
+export const SUCCESS = '#4cbb17';
+export const ERROR = '#dc3545';
+export const WARNING = '#ffc107';
