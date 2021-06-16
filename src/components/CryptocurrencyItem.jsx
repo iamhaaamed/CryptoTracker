@@ -9,7 +9,6 @@ export default function CryptocurrencyItem({
   id,
   symbol,
   name,
-  all_time_high,
   market_data,
   onPressRemove,
 }) {
@@ -41,7 +40,7 @@ export default function CryptocurrencyItem({
       </View>
       <View>
         <Text style={{fontWeight: 'bold'}}>
-          ${all_time_high.price.toFixed(2)}
+          ${market_data.price_usd.toFixed(2)}
         </Text>
         {percentageChangeLast24Hours ? (
           <Text

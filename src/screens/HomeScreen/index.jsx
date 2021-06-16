@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
-import {removeCryptoCurrency} from '../../actions/cryptoCurrencyActions';
+import {
+  removeCryptoCurrency,
+  updateCryptoCurrency,
+} from '../../actions/cryptoCurrencyActions';
 
 import {Colors, Spacing} from '../../styles';
 import {CryptocurrencyItem} from '../../components';
@@ -13,6 +16,14 @@ export default function HomeScreen({navigation}) {
   );
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      cryptoCurrencies?.map(({symbol}) => {
+        dispatch(updateCryptoCurrency(symbol));
+      });
+    }, 10000);
+  }, [dispatch, cryptoCurrencies]);
 
   return (
     <View
