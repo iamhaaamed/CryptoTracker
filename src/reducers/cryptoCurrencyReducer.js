@@ -2,7 +2,7 @@ import {
   UPDATE_CRYPTO_CURRENCY_ITEM,
   ADD_CRYPTO_CURRENCY_ITEM,
   REMOVE_CRYPTO_CURRENCY_ITEM,
-} from '../actions/cryptoCurrencyActions';
+} from '@/actions/cryptoCurrencyActions';
 
 const initialState = {
   cryptoCurrencies: [],

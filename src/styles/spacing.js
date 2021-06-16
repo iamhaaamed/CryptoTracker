@@ -1,4 +1,4 @@
-import {scale} from '../utils/scaling';
+import {scale} from '@/utils/scaling';
 
 export const HAIRLINE = scale(1);
 export const TINE = scale(3);

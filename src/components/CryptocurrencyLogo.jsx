@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import {Colors, Spacing} from '../styles';
+import {Colors, Spacing} from '@/styles';
 
-import logos from '../data/cryptocurrencies-logos.json';
+import logos from '@/data/cryptocurrencies-logos.json';
 
 export default function CryptocurrencyLogo({symbol}) {
   const logo = logos[symbol.toLowerCase()];

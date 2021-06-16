@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen, AddCryptoScreen} from '../screens';
+import {AddCryptoScreen, HomeScreen} from '@/screens';
 
 const Stack = createStackNavigator();
 export default function AppNavigator() {

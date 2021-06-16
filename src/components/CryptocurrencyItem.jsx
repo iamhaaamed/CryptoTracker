@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Alert} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import {Spacing, Colors} from '../styles';
+import {Spacing, Colors} from '@/styles';
 
-import {CryptocurrencyLogo} from '../components';
+import {CryptocurrencyLogo} from '@/components';
 
 export default function CryptocurrencyItem({
   id,

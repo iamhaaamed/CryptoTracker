@@ -5,10 +5,10 @@ import {useSelector, useDispatch} from 'react-redux';
 import {
   removeCryptoCurrency,
   updateCryptoCurrency,
-} from '../../actions/cryptoCurrencyActions';
+} from '@/actions/cryptoCurrencyActions';
 
-import {Colors, Spacing} from '../../styles';
-import {CryptocurrencyItem} from '../../components';
+import {Colors, Spacing} from '@/styles';
+import {CryptocurrencyItem} from '@/components';
 
 export default function HomeScreen({navigation}) {
   const {cryptoCurrencies} = useSelector(

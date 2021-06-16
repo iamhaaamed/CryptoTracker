@@ -1,24 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
-import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
-
-import {Colors, Spacing} from '../../styles';
-
-import {
-  getCryptoCurrencies,
-  addCryptoCurrency,
-  removeCryptoCurrency,
-} from '../../actions/cryptoCurrencyActions';
 import Spinner from 'react-native-loading-spinner-overlay';
+
+import {Colors, Spacing} from '@/styles';
+import {addCryptoCurrency} from '@/actions/cryptoCurrencyActions';
 
 export default function AddCryptoScreen({navigation}) {
   const [newCurrency, setNewCurrency] = useState();
 
   const [isLoading, setIsLoading] = useState(false);
-  const {cryptoCurrencies} = useSelector(
-    state => state.cryptoCurrenciesReducer,
-  );
 
   const dispatch = useDispatch();
 
