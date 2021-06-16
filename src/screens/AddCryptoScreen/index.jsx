@@ -44,7 +44,7 @@ export default function AddCryptoScreen({navigation}) {
           fontWeight: 'bold',
           fontSize: Spacing.LARGE,
         }}>
-        Add a CrptoCurremcy
+        Add a Cryptocurrency
       </Text>
       <TextInput
         style={{
