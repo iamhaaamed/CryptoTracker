@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
+import {useRoute} from '@react-navigation/native';
 
 import {
   removeCryptoCurrency,
   updateCryptoCurrency,
 } from '@/actions/cryptoCurrencyActions';
-
 import {Colors, Spacing} from '@/styles';
 import {CryptocurrencyItem} from '@/components';
 
@@ -17,16 +17,20 @@ export default function HomeScreen({navigation}) {
 
   const dispatch = useDispatch();
 
+  const updateCryptoCurrencyCallback = useCallback(() => {
+    cryptoCurrencies?.map(({symbol}) => {
+      dispatch(updateCryptoCurrency(symbol));
+    });
+  }, [dispatch, cryptoCurrencies]);
+
   useEffect(() => {
     let timer = setTimeout(() => {
-      cryptoCurrencies?.map(({symbol}) => {
-        dispatch(updateCryptoCurrency(symbol));
-      });
+      updateCryptoCurrencyCallback();
     }, 10000);
     return () => {
       clearTimeout(timer);
     };
-  }, [dispatch, cryptoCurrencies]);
+  }, [updateCryptoCurrencyCallback]);
 
   return (
     <View
