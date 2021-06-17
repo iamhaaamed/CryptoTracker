@@ -18,11 +18,14 @@ export default function HomeScreen({navigation}) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       cryptoCurrencies?.map(({symbol}) => {
         dispatch(updateCryptoCurrency(symbol));
       });
     }, 10000);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [dispatch, cryptoCurrencies]);
 
   return (
